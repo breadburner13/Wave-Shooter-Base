@@ -6,9 +6,6 @@ using Pathfinding;
 public class Enemy1 : MonoBehaviour
 {
     #region physics_vars
-    [SerializeField]
-    [Tooltip("Speed of enemy")]
-    private float move_speed;
     private Rigidbody2D enemyRB;
     private Player player;
     #endregion
@@ -25,17 +22,28 @@ public class Enemy1 : MonoBehaviour
 
     #region Movment_var
     // speed of the enemy
+    [SerializeField]
+    [Tooltip("Speed of enemy")]
+    private float move_speed;
+
+    
 
     Vector2 direction;
 
-    public float nextWaypointDistance = 5f;
+    public float nextWaypointDistance = 0f;
     Path path;
     int currWaypoint;
     bool reachedEndofPath = false;
 
     Seeker seeker;
     #endregion
-    
+
+    #region Health_vars
+    [SerializeField]
+    private float MaxHealth;
+    private float CurrHealth;
+    #endregion
+
 
     #region Unity_funcs
     private void Awake()
@@ -51,13 +59,15 @@ public class Enemy1 : MonoBehaviour
         // We need to find the player so we can move toward them
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         seeker = GetComponent<Seeker>();
-        InvokeRepeating("UpdatePath", 0f, .5f);
+        InvokeRepeating("UpdatePath", 0f, 1f);
         
     }
 
     private void Update()
     {
+        look();
         
+
     }
 
     private void FixedUpdate()
@@ -71,11 +81,11 @@ public class Enemy1 : MonoBehaviour
 
         Move();
 
-        look();
+       
     }
     #endregion
 
-    #region move_func
+    #region move_funcs
 
     void UpdatePath()
     {
@@ -88,10 +98,8 @@ public class Enemy1 : MonoBehaviour
     private void look()
     {
         
-        if((Vector2) transform.up != direction)
-        {
-            transform.up = direction;
-        }
+        transform.up = (Vector2) player.transform.position - enemyRB.position;
+        
         
     } 
 
@@ -107,7 +115,10 @@ public class Enemy1 : MonoBehaviour
 
         direction = ((Vector2)path.vectorPath[currWaypoint] - enemyRB.position).normalized;
         // use direction to influence the enemies velocity
+        Debug.Log(direction);
 
+        enemyRB.velocity = direction * move_speed;
+        //enemyRB.AddForce(direction * move_speed * Time.deltaTime);
 
         float distance = Vector2.Distance(enemyRB.position, path.vectorPath[currWaypoint]);
 
@@ -133,12 +144,26 @@ public class Enemy1 : MonoBehaviour
     #region AI_funcs
     void OnPathComplete(Path P)
     {
-        Debug.Log("Line 88");
+        
         if (!P.error)
         {
             path = P;
             currWaypoint = 0;
         }
     }
+
+
     #endregion
+
+    #region Health_funcs
+    public void TakeDamage(float d)
+    {
+        CurrHealth -= d;
+        if(CurrHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
+
 }
