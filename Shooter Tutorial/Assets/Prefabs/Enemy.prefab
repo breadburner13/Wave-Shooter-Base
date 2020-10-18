@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd6859b20f0a6d42b1500d00f1e5f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmg: 1
+  att_delay: 1
   move_speed: 2
   nextWaypointDistance: 3
   MaxHealth: 2

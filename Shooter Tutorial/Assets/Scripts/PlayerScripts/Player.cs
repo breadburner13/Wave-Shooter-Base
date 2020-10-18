@@ -102,4 +102,15 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    #region Health_funcs
+    public void TakeDamage(float dmg)
+    {
+        curr_health -= dmg;
+        Debug.Log("curr_health");
+        if(curr_health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
 }

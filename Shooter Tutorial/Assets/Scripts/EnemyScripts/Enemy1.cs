@@ -12,11 +12,18 @@ public class Enemy1 : MonoBehaviour
 
     #region attack_vars
     // something to hold our enemies damage
-
+    [SerializeField]
+    [Tooltip("Enemy damage to player")]
+    private float dmg;
     // an attack timer
+    private float att_timer;
 
     //expected attack delay var/.
+    [SerializeField]
+    [Tooltip("Delay between enemy attacks")]
+    private float att_delay;
 
+    private Player pl;
 
     #endregion
 
@@ -51,6 +58,7 @@ public class Enemy1 : MonoBehaviour
         // We need to get our RigidBody and seeker Components
         enemyRB = GetComponent<Rigidbody2D>();
         //set our max helath
+        CurrHealth = MaxHealth;
         
     }
     private void Start()
@@ -66,7 +74,10 @@ public class Enemy1 : MonoBehaviour
     private void Update()
     {
         look();
-        
+        if(att_timer > 0)
+        {
+            att_timer -= Time.deltaTime;
+        }
 
     }
 
@@ -115,7 +126,7 @@ public class Enemy1 : MonoBehaviour
 
         direction = ((Vector2)path.vectorPath[currWaypoint] - enemyRB.position).normalized;
         // use direction to influence the enemies velocity
-        Debug.Log(direction);
+        //Debug.Log(direction);
 
         enemyRB.velocity = direction * move_speed;
         //enemyRB.AddForce(direction * move_speed * Time.deltaTime);
@@ -133,11 +144,19 @@ public class Enemy1 : MonoBehaviour
     #region attack_func
 
     // we want to "attack" or wait to attack as long as we are in contact with a player
-
-    private void Attack()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //When attacking we can increase our timer, We will also use something called a coroutine for animations and so we don't attack every frame;
 
+        Debug.Log("collided");
+        if (collision.transform.CompareTag("Player"))
+        {
+            if(att_timer <= 0)
+            {
+                Debug.Log("attacking");
+                collision.gameObject.GetComponent<Player>().TakeDamage(dmg);
+                att_timer = att_delay;
+            }
+        }
     }
     #endregion
 
