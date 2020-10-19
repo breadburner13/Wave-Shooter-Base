@@ -67,7 +67,7 @@ public class Enemy1 : MonoBehaviour
         // We need to find the player so we can move toward them
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         seeker = GetComponent<Seeker>();
-        InvokeRepeating("UpdatePath", 0f, 1f);
+        InvokeRepeating("UpdatePath", 0f, .5f);
         
     }
 
@@ -77,8 +77,7 @@ public class Enemy1 : MonoBehaviour
         if(att_timer > 0)
         {
             att_timer -= Time.deltaTime;
-        }
-
+        } 
     }
 
     private void FixedUpdate()
@@ -116,33 +115,48 @@ public class Enemy1 : MonoBehaviour
 
     private void Move()
     {
-        if(currWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndofPath = true;
-        } else
-        {
-            reachedEndofPath = false;
+        // Check in a loop if we are close enough to the current waypoint to switch to the next one.
+        // We do this in a loop because many waypoints might be close to each other and we may reach
+        // several of them in the same frame.
+        reachedEndofPath = false;
+        // The distance to the next waypoint in the path
+        float distanceToWaypoint;
+        while (true) {
+            // If you want maximum performance you can check the squared distance instead to get rid of a
+            // square root calculation. But that is outside the scope of this tutorial.
+            distanceToWaypoint = Vector3.Distance(enemyRB.position, path.vectorPath[currWaypoint]);
+            Debug.Log("distanceToWayPoint: " + distanceToWaypoint);
+            if (distanceToWaypoint < nextWaypointDistance) {
+                // Check if there is another waypoint or if we have reached the end of the path
+                if (currWaypoint + 1 < path.vectorPath.Count) {
+                    currWaypoint++;
+                } else {
+                    // Set a status variable to indicate that the agent has reached the end of the path.
+                    // You can use this to trigger some special code if your game requires that.
+                    reachedEndofPath = true;
+                    break;
+                }
+            } else {
+                break;
+            }
         }
 
         direction = ((Vector2)path.vectorPath[currWaypoint] - enemyRB.position).normalized;
         // use direction to influence the enemies velocity
-        //Debug.Log(direction);
+        // Debug.Log("Direction: " + direction);
+        // Debug.Log("currWayPoint: " + currWaypoint);
+        // foreach (Vector3 asdf in path.vectorPath) {
+        //     Debug.Log((Vector2)asdf - enemyRB.position);
+        // }
+        // Debug.Log(path.vectorPath);
 
         enemyRB.velocity = direction * move_speed;
         //enemyRB.AddForce(direction * move_speed * Time.deltaTime);
-
-        float distance = Vector2.Distance(enemyRB.position, path.vectorPath[currWaypoint]);
-
-        if(distance < nextWaypointDistance)
-        {
-            currWaypoint++;
-        }
 
     }
     #endregion
 
     #region attack_func
-
     // we want to "attack" or wait to attack as long as we are in contact with a player
     private void OnCollisionEnter2D(Collision2D collision)
     {
