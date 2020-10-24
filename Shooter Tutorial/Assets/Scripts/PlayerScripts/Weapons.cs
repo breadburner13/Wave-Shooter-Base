@@ -16,8 +16,9 @@ public class Weapons : MonoBehaviour
     [SerializeField] public float ReloadTime;
     public float cooldown;
     [SerializeField] public float bullet_speed;
-    public void Attack(Vector3 position, Vector2 looking)
+    public virtual void Attack(Vector3 position, Vector2 looking)
     {
+        Debug.Log("shit eat");
         last_fired = Time.time;
         Bullet clone = Instantiate(BulletType, position, Quaternion.identity);
         clone.damage = damage;

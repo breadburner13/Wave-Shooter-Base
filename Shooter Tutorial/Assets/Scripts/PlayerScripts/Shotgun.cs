@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Shotgun : Weapons 
 {
-    public void ShotgunAttack(Vector3 position, Vector2 looking)
+    public override void Attack(Vector3 position, Vector2 looking)
     {
+        Debug.Log("eat shit");
         last_fired = Time.time;
         Bullet clone = Instantiate(BulletType, position, Quaternion.identity);
         clone.damage = damage;
