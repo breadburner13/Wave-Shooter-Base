@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour
     [Tooltip("Must be at least 1 to kill an enemy")]
     public int piercing;
     #endregion
-
     private Vector3 StartingPos;
 
     #region Unity_funcs
@@ -33,11 +32,12 @@ public class Bullet : MonoBehaviour
         if (collision.transform.CompareTag("Enemy"))
         {
             collision.GetComponent<Enemy1>().TakeDamage(damage);
-            piercing--;
-            if(piercing <= 0)
-            {
-                Destroy(this.gameObject);
-            }
+            
+        }
+        piercing--;
+        if(piercing <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
     #endregion

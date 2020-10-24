@@ -26,25 +26,7 @@ public class Player : MonoBehaviour
     private float max_health;
     private float curr_health;
     #endregion
-
-    #region Attack_vars
-    [SerializeField]
-    [Tooltip("Amount of health the player should have")]
-    private float damage;
-    [SerializeField]
-    [Tooltip("Fire rate")]
-    private float fire_rate;
-    private float last_fired;
-    [SerializeField]
-    [Tooltip("Holds the bullet prefab")]
-    private Bullet bullet;
-    [SerializeField]
-    [Tooltip("How many enemies it hits before disaearing")]
-    private int AmtPierced;
-    [SerializeField]
-    private float bullet_speed;
-    #endregion
-
+    [SerializeField] Weapons CurrentWeapon;
     #region Unity_funcs
     private void Start()
     {
@@ -60,13 +42,11 @@ public class Player : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            if(Time.time - last_fired > 1 / fire_rate)
+            if(Time.time - CurrentWeapon.last_fired > 1 / CurrentWeapon.fire_rate)
             {
                 Attack(); 
             }
         }
-
-        
     }
     #endregion
 
@@ -94,11 +74,7 @@ public class Player : MonoBehaviour
 
     private void Attack()
     {
-        last_fired = Time.time;
-        Bullet clone = Instantiate(bullet, transform.position, Quaternion.identity);
-        clone.damage = damage;
-        clone.piercing = AmtPierced;
-        clone.GetComponent<Rigidbody2D>().velocity = looking.normalized * bullet_speed;
+        CurrentWeapon.Attack(transform.position, looking);
     }
     #endregion
 
