@@ -558,7 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 10
   max_health: 5
-  CurrentWeapon: {fileID: 8844279028030595139, guid: d619e07ef9db832469f341d14adbc1c7,
+  CurrentWeapon: {fileID: 6048860419196513529, guid: be539b7f1dcde354185b11b3bdd4af4d,
     type: 3}
 --- !u!70 &430871587
 CapsuleCollider2D:
@@ -698,6 +698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088886, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
@@ -891,6 +896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088886, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}

@@ -44,11 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  fire_rate: 2
-  last_fired: 33.134895
+  fire_rate: 1
+  last_fired: 0
   BulletType: {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697,
     type: 3}
   Name: Mossberg
   ReloadTime: 0
-  cooldown: 0
   bullet_speed: 5

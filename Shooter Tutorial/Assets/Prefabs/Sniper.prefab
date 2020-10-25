@@ -44,11 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  fire_rate: 3
+  fire_rate: 2
   last_fired: 0
   BulletType: {fileID: 3033883379019952805, guid: 5f45bb3f0dce70242b69bf871af6edf3,
     type: 3}
   Name: Sniper
   ReloadTime: 0
-  cooldown: 0
   bullet_speed: 20

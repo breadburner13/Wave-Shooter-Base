@@ -44,11 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  fire_rate: 2
+  fire_rate: 0.5
   last_fired: 0
   BulletType: {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697,
     type: 3}
   Name: Tchakev
   ReloadTime: 0
-  cooldown: 0
   bullet_speed: 5

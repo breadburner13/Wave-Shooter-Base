@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     {
         PlayerRB = GetComponent<Rigidbody2D>();
         curr_health = max_health;
+        CurrentWeapon.last_fired = CurrentWeapon.fire_rate;
     }
     private void Update()
     {
@@ -39,12 +40,13 @@ public class Player : MonoBehaviour
         y_input = Input.GetAxisRaw("Vertical");
         move();
         pointing();
-
+        CurrentWeapon.last_fired += Time.deltaTime;
         if (Input.GetButton("Fire1"))
         {
-            if(Time.time - CurrentWeapon.last_fired > 1 / CurrentWeapon.fire_rate)
+            if(CurrentWeapon.last_fired > CurrentWeapon.fire_rate)
             {
                 Attack(); 
+                CurrentWeapon.last_fired = 0f;
             }
         }
     }
@@ -74,6 +76,7 @@ public class Player : MonoBehaviour
 
     private void Attack()
     {
+        Debug.Log("live clean");
         CurrentWeapon.Attack(transform.position, looking);
     }
     #endregion
