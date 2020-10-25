@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -138,5 +139,6 @@ MonoBehaviour:
   damage: 2
   fire_rate: 2
   bullet: {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697, type: 3}
-  AmtPierced: 1
   bullet_speed: 4
+  CurrentWeapon: {fileID: 6894751843998698491, guid: be539b7f1dcde354185b11b3bdd4af4d,
+    type: 3}

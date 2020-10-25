@@ -26,30 +26,13 @@ public class Player : MonoBehaviour
     private float max_health;
     private float curr_health;
     #endregion
-
-    #region Attack_vars
-    [SerializeField]
-    [Tooltip("Amount of health the player should have")]
-    private float damage;
-    [SerializeField]
-    [Tooltip("Fire rate")]
-    private float fire_rate;
-    private float last_fired;
-    [SerializeField]
-    [Tooltip("Holds the bullet prefab")]
-    private Bullet bullet;
-    [SerializeField]
-    [Tooltip("How many enemies it hits before disaearing")]
-    private int AmtPierced;
-    [SerializeField]
-    private float bullet_speed;
-    #endregion
-
+    [SerializeField] Weapons CurrentWeapon;
     #region Unity_funcs
     private void Start()
     {
         PlayerRB = GetComponent<Rigidbody2D>();
         curr_health = max_health;
+        CurrentWeapon.last_fired = CurrentWeapon.fire_rate;
     }
     private void Update()
     {
@@ -57,16 +40,15 @@ public class Player : MonoBehaviour
         y_input = Input.GetAxisRaw("Vertical");
         move();
         pointing();
-
+        CurrentWeapon.last_fired += Time.deltaTime;
         if (Input.GetButton("Fire1"))
         {
-            if(Time.time - last_fired > 1 / fire_rate)
+            if(CurrentWeapon.last_fired > CurrentWeapon.fire_rate)
             {
                 Attack(); 
+                CurrentWeapon.last_fired = 0f;
             }
         }
-
-        
     }
     #endregion
 
@@ -94,11 +76,8 @@ public class Player : MonoBehaviour
 
     private void Attack()
     {
-        last_fired = Time.time;
-        Bullet clone = Instantiate(bullet, transform.position, Quaternion.identity);
-        clone.damage = damage;
-        clone.piercing = AmtPierced;
-        clone.GetComponent<Rigidbody2D>().velocity = looking.normalized * bullet_speed;
+        Debug.Log("live clean");
+        CurrentWeapon.Attack(transform.position, looking);
     }
     #endregion
 
