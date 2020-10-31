@@ -8,7 +8,6 @@ public class Enemy1 : MonoBehaviour
     #region physics_vars
     private Rigidbody2D enemyRB;
     private Player player;
-    private int PointValue;
     #endregion
 
     #region attack_vars
@@ -73,7 +72,6 @@ public class Enemy1 : MonoBehaviour
         seeker = GetComponent<Seeker>();
         InvokeRepeating("UpdatePath", 0f, .5f);
         max_move_speed = move_speed;
-        PointValue = 100;
     }
 
     private void Update()
@@ -211,7 +209,6 @@ public class Enemy1 : MonoBehaviour
         if(CurrHealth <= 0)
         {
             Debug.Log("Added Points");
-            player.AddPoints(PointValue);
             Destroy(this.gameObject);
         }
     }
