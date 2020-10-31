@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private Vector2 looking;
     private float x_input;
     private float y_input;
+    [SerializeField]
+    private Vector2 last_visited;
     #endregion
 
     #region Unity_vars
@@ -33,6 +35,7 @@ public class Player : MonoBehaviour
         PlayerRB = GetComponent<Rigidbody2D>();
         curr_health = max_health;
         CurrentWeapon.last_fired = CurrentWeapon.fire_rate;
+        transform.position = last_visited;
     }
     private void Update()
     {
@@ -88,8 +91,13 @@ public class Player : MonoBehaviour
         Debug.Log("curr_health");
         if(curr_health <= 0)
         {
-            Destroy(this.gameObject);
+            Start();
         }
     }
     #endregion
+
+    public void SetSpawn(Vector2 checkpoint)
+    {
+        last_visited = checkpoint;
+    }
 }
