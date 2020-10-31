@@ -8,6 +8,7 @@ public class Enemy1 : MonoBehaviour
     #region physics_vars
     private Rigidbody2D enemyRB;
     private Player player;
+    private int PointValue;
     #endregion
 
     #region attack_vars
@@ -31,9 +32,11 @@ public class Enemy1 : MonoBehaviour
     // speed of the enemy
     [SerializeField]
     [Tooltip("Speed of enemy")]
-    private float move_speed;
+    public float move_speed;
+    private float max_move_speed;
+    private bool effects;
+    private float length_of_effect;
 
-    
 
     Vector2 direction;
 
@@ -59,7 +62,8 @@ public class Enemy1 : MonoBehaviour
         enemyRB = GetComponent<Rigidbody2D>();
         //set our max helath
         CurrHealth = MaxHealth;
-        
+        effects = false;
+
     }
     private void Start()
     {
@@ -68,7 +72,8 @@ public class Enemy1 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         seeker = GetComponent<Seeker>();
         InvokeRepeating("UpdatePath", 0f, .5f);
-        
+        max_move_speed = move_speed;
+        PointValue = 100;
     }
 
     private void Update()
@@ -77,7 +82,18 @@ public class Enemy1 : MonoBehaviour
         if(att_timer > 0)
         {
             att_timer -= Time.deltaTime;
-        } 
+        }
+
+        if (length_of_effect > 0 && effects)
+        {
+            length_of_effect -= Time.deltaTime;
+        }
+
+        if (effects && length_of_effect <= 0)
+        {
+            effects = false;
+            RestoreEnemy();
+        }
     }
 
     private void FixedUpdate()
@@ -194,8 +210,28 @@ public class Enemy1 : MonoBehaviour
         CurrHealth -= d;
         if(CurrHealth <= 0)
         {
+            Debug.Log("Added Points");
+            player.AddPoints(PointValue);
             Destroy(this.gameObject);
         }
+    }
+
+    public void SetEffects(bool setting, float timer)
+    {
+        effects = setting;
+        length_of_effect = timer;
+    }
+
+    public bool EffectsOn()
+    {
+        return effects;
+    }
+
+    private void RestoreEnemy()
+    {
+        Debug.Log("Timer Works");
+        GetComponent<Enemy1>().move_speed = max_move_speed;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
     #endregion
 

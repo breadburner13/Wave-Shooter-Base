@@ -13,11 +13,12 @@ public class Player : MonoBehaviour
     private Vector2 looking;
     private float x_input;
     private float y_input;
+    [SerializeField]
+    private Vector2 last_visited;
     #endregion
 
     #region Unity_vars
     Rigidbody2D PlayerRB;
-
     #endregion
 
     #region Health_vars
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
         PlayerRB = GetComponent<Rigidbody2D>();
         curr_health = max_health;
         CurrentWeapon.last_fired = CurrentWeapon.fire_rate;
+        transform.position = last_visited;
     }
     private void Update()
     {
@@ -48,6 +50,12 @@ public class Player : MonoBehaviour
                 Attack(); 
                 CurrentWeapon.last_fired = 0f;
             }
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Debug.Log("Switch bullets");
+            CurrentWeapon.SwitchBullet();
         }
     }
     #endregion
@@ -79,6 +87,7 @@ public class Player : MonoBehaviour
         Debug.Log("live clean");
         CurrentWeapon.Attack(transform.position, looking);
     }
+
     #endregion
 
     #region Health_funcs
@@ -92,4 +101,9 @@ public class Player : MonoBehaviour
         }
     }
     #endregion
+
+    public void SetSpawn(Vector2 checkpoint)
+    {
+        last_visited = checkpoint;
+    }
 }
