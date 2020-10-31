@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
         Debug.Log("curr_health");
         if(curr_health <= 0)
         {
-            Destroy(this.gameObject);
+            Start();
         }
     }
     #endregion
