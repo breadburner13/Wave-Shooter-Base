@@ -17,9 +17,8 @@ public class Weapons : MonoBehaviour
     private int bullet_index;
     public string Name;
     public float ReloadTime;
-    [SerializeField]
     [Tooltip("Speed of Bullet")]
-    private float bullet_speed;
+    public float bullet_speed;
     #endregion
 
     #region Unity_funcs
