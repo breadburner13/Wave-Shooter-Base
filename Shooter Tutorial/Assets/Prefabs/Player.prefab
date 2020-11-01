@@ -135,10 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_speed: 5
+  last_visited: {x: 0, y: 0}
   max_health: 10
-  damage: 2
-  fire_rate: 2
-  bullet: {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697, type: 3}
-  bullet_speed: 4
-  CurrentWeapon: {fileID: 6894751843998698491, guid: be539b7f1dcde354185b11b3bdd4af4d,
+  CurrentWeapon: {fileID: 6674381379083277657, guid: 941037383e8c21e4294ae8ed7a5df9d5,
     type: 3}
