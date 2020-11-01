@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -28,6 +29,14 @@ public class Player : MonoBehaviour
     private float curr_health;
     #endregion
 
+    #region UI_vars
+    [SerializeField]
+    [Tooltip("holds teh slider associated with health")]
+    private Slider HPSlider;
+    [SerializeField]
+    private Text score;
+    #endregion
+
     #region Weapon vars
     [SerializeField] Weapons CurrentWeapon;
     #endregion
@@ -39,6 +48,8 @@ public class Player : MonoBehaviour
         curr_health = max_health;
         CurrentWeapon.last_fired = CurrentWeapon.fire_rate;
         transform.position = last_visited;
+        HPSlider.value = curr_health / max_health;
+        score.text = "0";
     }
     private void Update()
     {
@@ -103,6 +114,7 @@ public class Player : MonoBehaviour
         {
             Start();
         }
+        HPSlider.value = curr_health / max_health;
     }
 
     public void SetSpawn(Vector2 checkpoint)
