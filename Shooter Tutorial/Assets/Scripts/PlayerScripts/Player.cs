@@ -27,7 +27,11 @@ public class Player : MonoBehaviour
     private float max_health;
     private float curr_health;
     #endregion
+
+    #region Weapon vars
     [SerializeField] Weapons CurrentWeapon;
+    #endregion
+
     #region Unity_funcs
     private void Start()
     {
@@ -95,15 +99,15 @@ public class Player : MonoBehaviour
     {
         curr_health -= dmg;
         Debug.Log("curr_health");
-        if(curr_health <= 0)
+        if (curr_health <= 0)
         {
             Start();
         }
     }
-    #endregion
 
     public void SetSpawn(Vector2 checkpoint)
     {
         last_visited = checkpoint;
     }
+    #endregion
 }

@@ -43,11 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38c7c55204ef0f40989a11a2943ce35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 10
   fire_rate: 1
   last_fired: 0
   BulletType: {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697,
     type: 3}
+  bullet_types: []
   Name: Mossberg
   ReloadTime: 0
   bullet_speed: 5

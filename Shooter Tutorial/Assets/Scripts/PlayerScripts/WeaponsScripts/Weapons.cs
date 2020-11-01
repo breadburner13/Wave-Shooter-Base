@@ -3,29 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Weapons : MonoBehaviour
 {
-    [SerializeField]
+    #region Inhereted_vars
     [Tooltip("Amount of health the player should have")]
     public float damage;
-    [SerializeField]
     [Tooltip("Fire rate")]
     public float fire_rate;
     public float last_fired = 0f;
-    [SerializeField] public Bullet BulletType;
+    public Bullet BulletType;
     [SerializeField]
     [Tooltip("Holds the different types of bullets")]
     private Bullet[] bullet_types;
     // Keeps track of the bullet index 
     private int bullet_index;
-    [SerializeField] public string Name;
-    [SerializeField] public float ReloadTime;
-    [SerializeField] public float bullet_speed;
+    public string Name;
+    public float ReloadTime;
+    [SerializeField]
+    [Tooltip("Speed of Bullet")]
+    private float bullet_speed;
+    #endregion
 
+    #region Unity_funcs
     private void Awake()
     {
         bullet_index = 0;
         last_fired = 0f;
     }
+    #endregion
 
+    #region Weapon_funcs
     public virtual void Attack(Vector3 position, Vector2 looking)
     {
         Debug.Log("shit eat");
@@ -39,7 +44,9 @@ public class Weapons : MonoBehaviour
     {
         return new Vector2(v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta), v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta));
     }
+    #endregion
 
+    #region Player_funcs
     public void SwitchBullet()
     {
         bullet_index++;
@@ -50,6 +57,8 @@ public class Weapons : MonoBehaviour
         BulletType = bullet_types[bullet_index];
         Debug.Log(BulletType.name);
     }
+
+    #endregion
 }
 
 
