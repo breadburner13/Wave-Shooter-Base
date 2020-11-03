@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1456508688448805087}
-  - component: {fileID: 6558384200709093638}
+  - component: {fileID: 1490431256850738329}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6558384200709093638
+--- !u!114 &1490431256850738329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,14 +40,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2905671361955225889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 516abcd7db2d1d64bafd0ca432973c7d, type: 3}
+  m_Script: {fileID: 11500000, guid: d38c7c55204ef0f40989a11a2943ce35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
-  fire_rate: 2
+  damage: 0
+  fire_rate: 0
   last_fired: 0
-  BulletType: {fileID: 3033883379019952805, guid: 5f45bb3f0dce70242b69bf871af6edf3,
-    type: 3}
-  Name: Sniper
+  BulletType: {fileID: 0}
+  bullet_types: []
+  Name: 
   ReloadTime: 0
-  bullet_speed: 20
+  bullet_speed: 0
