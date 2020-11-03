@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: deda9d9053f34489fb72c046fa7804c4,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -180,6 +183,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -288,6 +292,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -370,12 +375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_speed: 5
+  last_visited: {x: 0, y: 0}
   max_health: 5
-  damage: 1
-  fire_rate: 1
-  bullet: {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697, type: 3}
-  AmtPierced: 0
-  bullet_speed: 5
+  HPSlider: {fileID: 0}
+  score: {fileID: 0}
+  CurrentWeapon: {fileID: 0}
 --- !u!70 &1706679990
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -428,6 +432,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -536,6 +541,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -683,7 +689,7 @@ PrefabInstance:
     - target: {fileID: 5414948161102384398, guid: 976393b12d96e344a9dcb7616b6b887b,
         type: 3}
       propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAAIezPzzztUAIAAPYEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1zmzAQ/SsenesOUJPUvbXYcXpwnInTyYWLgMVoLCRGH/FHxv+9KwGGupMT4u3b1Xu7Cx+ECd1AbqRaKVasZQHkx4S4M/kyGYKPcKQ7KbbsDD3njRWmciTqOS/UMIl46NK0rMEolv8UO+7IAYJWsFKqelnsIJHaaIRLyjVgSEnjsgVCHxNyxMd07lJOeIru3emMp3kwueAxB2FADdSe2NNalhU5p3UDhZM8kMOoY4ctTaCZjhF8jWJXXnLOdCeGmFPjzSa00RatIKFgFM15Bd/wtQK2q4wTOk7elKUG06lS9LRgCnvUViW/ZNu4mup9K+2dcuvuieI7L6stuv4vPg19uFSyfuzvDQN3h6lYvn+hp5xqM+rsGF4MwkPfoQPle5pxeKtAPMmVklYUGDTKulSrIVoMr1drSQX5fsBbqTegbT6fj/Nw8e6PCWd15ls/a4Etl77ffvqgcDi/UbDfDd2VQNSp+KPhle7GS9QFHpjSBkOdS+HkZdIqRyVL3zPnxppEKgFqXKEBQbk5PWMdczvDm9jnWQ/UfS/d7V2s/wxuUjw88IPgJvQsD9dp6Uoe1qCrjTWcCRha7QJP2KhECtGu2NhSn7a1qqT5KG1nWfHvbhG4C6IsjEOYZVEY0Gw6j2fx9zK8L+NyFpdZRvzyMYE+KX9uhXbtwbGJobjARet/I5OVoo1f90LRw4qda6kHJhOl3OYKQGzaClfhoPAS/DKLZcGwQVswhgk/cPKREi7zPRTptVDqnS6PRtF0qJKShr1L45CUJP6/kZILufwFUEsDBBQAAAgIAAAAIeyX8laIbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSqpmBUZKhqWGqSZKRoUFikq6lqYmpRZqheZppmolpWlKSUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAAIezPzzztUAIAAPYEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAAIeyX8laIbQAAAHgAAAAJACQAAAAAAAAAAAAAAJ0CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAVQMAAAAA
+      value: UEsDBBQAAAgIAACAn+vPzzztUAIAAPYEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1zmzAQ/SsenesOUJPUvbXYcXpwnInTyYWLgMVoLCRGH/FHxv+9KwGGupMT4u3b1Xu7Cx+ECd1AbqRaKVasZQHkx4S4M/kyGYKPcKQ7KbbsDD3njRWmciTqOS/UMIl46NK0rMEolv8UO+7IAYJWsFKqelnsIJHaaIRLyjVgSEnjsgVCHxNyxMd07lJOeIru3emMp3kwueAxB2FADdSe2NNalhU5p3UDhZM8kMOoY4ctTaCZjhF8jWJXXnLOdCeGmFPjzSa00RatIKFgFM15Bd/wtQK2q4wTOk7elKUG06lS9LRgCnvUViW/ZNu4mup9K+2dcuvuieI7L6stuv4vPg19uFSyfuzvDQN3h6lYvn+hp5xqM+rsGF4MwkPfoQPle5pxeKtAPMmVklYUGDTKulSrIVoMr1drSQX5fsBbqTegbT6fj/Nw8e6PCWd15ls/a4Etl77ffvqgcDi/UbDfDd2VQNSp+KPhle7GS9QFHpjSBkOdS+HkZdIqRyVL3zPnxppEKgFqXKEBQbk5PWMdczvDm9jnWQ/UfS/d7V2s/wxuUjw88IPgJvQsD9dp6Uoe1qCrjTWcCRha7QJP2KhECtGu2NhSn7a1qqT5KG1nWfHvbhG4C6IsjEOYZVEY0Gw6j2fx9zK8L+NyFpdZRvzyMYE+KX9uhXbtwbGJobjARet/I5OVoo1f90LRw4qda6kHJhOl3OYKQGzaClfhoPAS/DKLZcGwQVswhgk/cPKREi7zPRTptVDqnS6PRtF0qJKShr1L45CUJP6/kZILufwFUEsDBBQAAAgIAACAn+uX8laIbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSqpmBUZKhqWGqSZKRoUFikq6lqYmpRZqheZppmolpWlKSUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACAn+vPzzztUAIAAPYEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACAn+uX8laIbQAAAHgAAAAJACQAAAAAAAAAAAAAAJ0CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAVQMAAAAA
       objectReference: {fileID: 0}
     - target: {fileID: 5414948161102384399, guid: 976393b12d96e344a9dcb7616b6b887b,
         type: 3}
