@@ -52,3 +52,5 @@ MonoBehaviour:
   Name: Pistol
   ReloadTime: 0
   bullet_speed: 7
+  maxAmmo: 2
+  currentAmmo: 0

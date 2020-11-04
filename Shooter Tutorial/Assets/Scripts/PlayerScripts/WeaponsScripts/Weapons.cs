@@ -19,13 +19,17 @@ public class Weapons : MonoBehaviour
     public float ReloadTime;
     [Tooltip("Speed of Bullet")]
     public float bullet_speed;
+    [SerializeField] public int maxAmmo;
+    public int currentAmmo;
+
     #endregion
 
     #region Unity_funcs
-    private void Awake()
+    public void Awake()
     {
         bullet_index = 0;
         last_fired = 0f;
+        currentAmmo = maxAmmo;
     }
     #endregion
 

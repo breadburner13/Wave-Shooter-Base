@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Unity_funcs
-    private void Start()
+    private void Awake()
     {
         PlayerRB = GetComponent<Rigidbody2D>();
         curr_health = max_health;
@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
         transform.position = last_visited;
         HPSlider.value = curr_health / max_health;
         score.text = "0";
+        Debug.Log("Guess that's fine");
+        CurrentWeapon.Awake();
     }
     private void Update()
     {
@@ -60,9 +62,10 @@ public class Player : MonoBehaviour
         CurrentWeapon.last_fired += Time.deltaTime;
         if (Input.GetButton("Fire1"))
         {
-            if(CurrentWeapon.last_fired > CurrentWeapon.fire_rate)
+            if(CurrentWeapon.last_fired > CurrentWeapon.fire_rate && CurrentWeapon.currentAmmo > 0)
             {
                 Attack(); 
+                CurrentWeapon.currentAmmo -= 1;
                 CurrentWeapon.last_fired = 0f;
             }
         }
@@ -98,7 +101,7 @@ public class Player : MonoBehaviour
     #region Attack_funcs
 
     private void Attack()
-    {
+    {   
         Debug.Log("live clean");
         CurrentWeapon.Attack(transform.position, looking);
     }
@@ -112,7 +115,7 @@ public class Player : MonoBehaviour
         Debug.Log("curr_health");
         if (curr_health <= 0)
         {
-            Start();
+            Awake();
         }
         HPSlider.value = curr_health / max_health;
     }
