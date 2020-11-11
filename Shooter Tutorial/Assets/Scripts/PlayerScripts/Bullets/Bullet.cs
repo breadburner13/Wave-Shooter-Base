@@ -21,13 +21,14 @@ public class Bullet : MonoBehaviour
     {
         if(Vector3.Distance(StartingPos, transform.position)> 10f)
         {
+            Debug.Log("Those long days passing by the door like late summer they slowly fade away");
             Destroy(this.gameObject);
         }
     }
     #endregion
 
     #region Damag_funcs
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Enemy"))
         {
