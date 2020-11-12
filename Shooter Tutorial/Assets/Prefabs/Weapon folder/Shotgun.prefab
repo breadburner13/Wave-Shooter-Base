@@ -50,5 +50,7 @@ MonoBehaviour:
     type: 3}
   bullet_types: []
   Name: Mossberg
-  ReloadTime: 0
+  ReloadTime: 0.2
   bullet_speed: 5
+  maxAmmo: 20
+  currentAmmo: 0

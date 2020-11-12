@@ -18,19 +18,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Vector2 last_visited;
     [SerializeField]
-<<<<<<< Updated upstream
     [Tooltip("How fast you roll")]
     private float dodge_speed;
     [SerializeField]
     [Tooltip("How long you roll")]
-=======
-    private float dodge_cooldown_time;
-    private float dodge_cooldown;
-    [SerializeField]
-    private float dodge_force;
-    [SerializeField]
-    private float max_dodge_time;
->>>>>>> Stashed changes
     private float dodge_time;
     #endregion
 
@@ -72,24 +63,17 @@ public class Player : MonoBehaviour
     {
         x_input = Input.GetAxisRaw("Horizontal");
         y_input = Input.GetAxisRaw("Vertical");
-<<<<<<< Updated upstream
         if(!dodging)
         {
             move();
         }
-=======
-        dodge_time -= Time.deltaTime;
-        dodge_cooldown -= Time.deltaTime;
-        move();
-        dodge();
->>>>>>> Stashed changes
         pointing();
         CurrentWeapon.last_fired += Time.deltaTime;
         if (Input.GetButton("Fire1"))
         {
             if(CurrentWeapon.last_fired > CurrentWeapon.fire_rate && CurrentWeapon.currentAmmo > 0)
             {
-                Attack(); 
+                Attack();
                 CurrentWeapon.currentAmmo -= 1;
                 CurrentWeapon.last_fired = 0f;
             }
@@ -100,20 +84,11 @@ public class Player : MonoBehaviour
             Debug.Log("Switch bullets");
             CurrentWeapon.SwitchBullet();
         }
-<<<<<<< Updated upstream
 
         if (Input.GetKeyDown("z") && !dodging)
         {
             StartCoroutine(dodge());
         }
-=======
-        if (Input.GetKeyDown("z") && dodge_cooldown <= 0)
-        {
-            dodge_time = max_dodge_time;
-            dodge_cooldown = dodge_cooldown_time;
-        }
-        
->>>>>>> Stashed changes
     }
     #endregion
 
@@ -131,20 +106,9 @@ public class Player : MonoBehaviour
     {
         //based on x and y input decide how the player should move through their velocity
         // you may want to normilize the vector you make
-        if(dodge_time <= 0)
-        {
-            PlayerRB.velocity = new Vector2(x_input, y_input).normalized * move_speed;
-        }
-        else
-        {
-            PlayerRB.velocity = Vector2.zero;
-            dodge_time -= Time.deltaTime;
-        }
-
-
+        PlayerRB.velocity = new Vector2(x_input, y_input).normalized * move_speed;
     }
 
-<<<<<<< Updated upstream
     private IEnumerator dodge()
     {
         dodging = true;
@@ -153,26 +117,13 @@ public class Player : MonoBehaviour
         PlayerRB.velocity = Vector2.zero;
         yield return new WaitForSeconds(dodge_time / 2);
         dodging = false;
-=======
-    public Vector2 Rotate(Vector2 v, float delta)
-    {
-        return new Vector2(v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta), v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta));
-    }
-
-    private void dodge()
-    {
-        if(dodge_time > 0)
-        {
-            PlayerRB.AddForce(Rotate(looking.normalized, Mathf.PI) * dodge_force);
-        }
->>>>>>> Stashed changes
     }
     #endregion
 
     #region Attack_funcs
 
     private void Attack()
-    {   
+    {
         Debug.Log("live clean");
         CurrentWeapon.Attack(transform.position, looking);
     }
