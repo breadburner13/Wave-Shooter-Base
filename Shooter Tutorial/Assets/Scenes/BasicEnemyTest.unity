@@ -376,6 +376,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 5
   last_visited: {x: 0, y: 0}
+  dodge_cooldown: 0
+  dodge_force: 30
+  max_dodge_time: 50
   max_health: 5
   HPSlider: {fileID: 0}
   score: {fileID: 0}

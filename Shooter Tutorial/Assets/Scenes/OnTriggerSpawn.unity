@@ -718,6 +718,7 @@ PrefabInstance:
       objectReference: {fileID: 223932343}
     - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
         type: 3}
+<<<<<<< Updated upstream
       propertyPath: dodge_speed
       value: 20
       objectReference: {fileID: 0}
@@ -726,6 +727,21 @@ PrefabInstance:
       propertyPath: dodge_time
       value: 0.2
       objectReference: {fileID: 0}
+=======
+      propertyPath: dodge_force
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
+        type: 3}
+      propertyPath: max_dodge_time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
+        type: 3}
+      propertyPath: dodge_cooldown_time
+      value: 0.5
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 7436101132885174646, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
         type: 3}
       propertyPath: m_Name
