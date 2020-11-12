@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: 5
-    enemy: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de, type: 3}
+    enemy: {fileID: 6760172530793527978, guid: f9dd82227aedf3543a4a27de471cb2e7, type: 3}
     amount: 5
     rate: 2
   nextwave: 0
@@ -716,6 +716,16 @@ PrefabInstance:
       propertyPath: score
       value: 
       objectReference: {fileID: 223932343}
+    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
+        type: 3}
+      propertyPath: dodge_speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
+        type: 3}
+      propertyPath: dodge_time
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7436101132885174646, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
         type: 3}
       propertyPath: m_Name

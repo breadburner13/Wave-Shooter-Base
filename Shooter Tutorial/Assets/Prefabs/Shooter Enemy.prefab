@@ -21,6 +21,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7953915783607088885, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088885, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.3443396
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088885, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.3443396
+      objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088886, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_Name
@@ -30,6 +45,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: ShooterEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088886, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}

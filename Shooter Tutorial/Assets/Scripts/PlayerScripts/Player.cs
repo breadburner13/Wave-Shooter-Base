@@ -14,8 +14,15 @@ public class Player : MonoBehaviour
     private Vector2 looking;
     private float x_input;
     private float y_input;
+    private bool dodging;
     [SerializeField]
     private Vector2 last_visited;
+    [SerializeField]
+    [Tooltip("How fast you roll")]
+    private float dodge_speed;
+    [SerializeField]
+    [Tooltip("How long you roll")]
+    private float dodge_time;
     #endregion
 
     #region Unity_vars
@@ -57,7 +64,10 @@ public class Player : MonoBehaviour
     {
         x_input = Input.GetAxisRaw("Horizontal");
         y_input = Input.GetAxisRaw("Vertical");
-        move();
+        if(!dodging)
+        {
+            move();
+        }
         pointing();
         CurrentWeapon.last_fired += Time.deltaTime;
         if (Input.GetButton("Fire1"))
@@ -74,6 +84,11 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Switch bullets");
             CurrentWeapon.SwitchBullet();
+        }
+
+        if (Input.GetKeyDown("z") && !dodging)
+        {
+            StartCoroutine(dodge());
         }
     }
     #endregion
@@ -95,6 +110,16 @@ public class Player : MonoBehaviour
         PlayerRB.velocity = new Vector2(x_input, y_input).normalized * move_speed;
 
 
+    }
+
+    private IEnumerator dodge()
+    {
+        dodging = true;
+        PlayerRB.velocity = looking.normalized * -1 * dodge_speed;
+        yield return new WaitForSeconds(dodge_time);
+        PlayerRB.velocity = Vector2.zero;
+        yield return new WaitForSeconds(dodge_time / 2);
+        dodging = false;
     }
     #endregion
 
