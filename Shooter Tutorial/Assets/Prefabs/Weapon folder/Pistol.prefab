@@ -48,9 +48,10 @@ MonoBehaviour:
   last_fired: 0
   BulletType: {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697,
     type: 3}
-  bullet_types: []
+  bullet_types:
+  - {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697, type: 3}
   Name: Pistol
   ReloadTime: 0
   bullet_speed: 7
-  maxAmmo: 2
-  currentAmmo: 0
+  maxAmmo: 20
+  currentAmmo: 19
