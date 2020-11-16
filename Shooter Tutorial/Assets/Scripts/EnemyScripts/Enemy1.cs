@@ -35,6 +35,7 @@ public class Enemy1 : MonoBehaviour
     private float max_move_speed;
     private bool effects;
     private float length_of_effect;
+    private bool knockBackEffect;
 
 
     Vector2 direction;
@@ -66,18 +67,19 @@ public class Enemy1 : MonoBehaviour
     }
     private void Start()
     {
-        
+
         // We need to find the player so we can move toward them
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         seeker = GetComponent<Seeker>();
         InvokeRepeating("UpdatePath", 0f, .5f);
         max_move_speed = move_speed;
+        knockBackEffect = false;
     }
 
     private void Update()
     {
         look();
-        if(att_timer > 0)
+        if (att_timer > 0)
         {
             att_timer -= Time.deltaTime;
         }
@@ -96,16 +98,18 @@ public class Enemy1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
 
-        if(path == null)
+
+        if (path == null)
         {
             return;
         }
 
-        Move();
+        if (!knockBackEffect)
+        {
+            Move();
+        }
 
-       
     }
     #endregion
 
@@ -114,18 +118,19 @@ public class Enemy1 : MonoBehaviour
     void UpdatePath()
     {
 
-        if (seeker.IsDone()) {
+        if (seeker.IsDone())
+        {
             seeker.StartPath(enemyRB.position, player.transform.position, OnPathComplete);
         }
     }
 
     private void look()
     {
-        
-        transform.up = (Vector2) player.transform.position - enemyRB.position;
-        
-        
-    } 
+
+        transform.up = (Vector2)player.transform.position - enemyRB.position;
+
+
+    }
 
     private void Move()
     {
@@ -135,22 +140,29 @@ public class Enemy1 : MonoBehaviour
         reachedEndofPath = false;
         // The distance to the next waypoint in the path
         float distanceToWaypoint;
-        while (true) {
+        while (true)
+        {
             // If you want maximum performance you can check the squared distance instead to get rid of a
             // square root calculation. But that is outside the scope of this tutorial.
             distanceToWaypoint = Vector3.Distance(enemyRB.position, path.vectorPath[currWaypoint]);
-            //Debug.Log("distanceToWayPoint: " + distanceToWaypoint);
-            if (distanceToWaypoint < nextWaypointDistance) {
+            Debug.Log("distanceToWayPoint: " + distanceToWaypoint);
+            if (distanceToWaypoint < nextWaypointDistance)
+            {
                 // Check if there is another waypoint or if we have reached the end of the path
-                if (currWaypoint + 1 < path.vectorPath.Count) {
+                if (currWaypoint + 1 < path.vectorPath.Count)
+                {
                     currWaypoint++;
-                } else {
+                }
+                else
+                {
                     // Set a status variable to indicate that the agent has reached the end of the path.
                     // You can use this to trigger some special code if your game requires that.
                     reachedEndofPath = true;
                     break;
                 }
-            } else {
+            }
+            else
+            {
                 break;
             }
         }
@@ -178,7 +190,7 @@ public class Enemy1 : MonoBehaviour
         Debug.Log("collided");
         if (collision.transform.CompareTag("Player"))
         {
-            if(att_timer <= 0)
+            if (att_timer <= 0)
             {
                 Debug.Log("attacking");
                 collision.gameObject.GetComponent<Player>().TakeDamage(dmg);
@@ -191,7 +203,7 @@ public class Enemy1 : MonoBehaviour
     #region AI_funcs
     void OnPathComplete(Path P)
     {
-        
+
         if (!P.error)
         {
             path = P;
@@ -206,17 +218,27 @@ public class Enemy1 : MonoBehaviour
     public void TakeDamage(float d)
     {
         CurrHealth -= d;
-        if(CurrHealth <= 0)
+        if (CurrHealth <= 0)
         {
             Debug.Log("Added Points");
             Destroy(this.gameObject);
         }
     }
 
-    public void SetEffects(bool setting, float timer)
+
+    #endregion
+
+    #region Effects
+
+    public void SetEffects(bool setting, float timer, string effect = "not knockback")
     {
         effects = setting;
         length_of_effect = timer;
+
+        if (effect == "knockback")
+        {
+            knockBackEffect = true;
+        }
     }
 
     public bool EffectsOn()
@@ -229,6 +251,7 @@ public class Enemy1 : MonoBehaviour
         Debug.Log("Timer Works");
         GetComponent<Enemy1>().move_speed = max_move_speed;
         GetComponent<SpriteRenderer>().color = Color.white;
+        knockBackEffect = false;
     }
     #endregion
 

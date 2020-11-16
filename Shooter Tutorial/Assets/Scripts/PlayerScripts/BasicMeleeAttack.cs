@@ -24,6 +24,7 @@ public class BasicMeleeAttack : MonoBehaviour
             for (int i = 0; i < enemiesInRange.Length; i++)
             {
                 enemiesInRange[i].GetComponent<Enemy1>().TakeDamage(damage);
+                enemiesInRange[i].GetComponent<Enemy1>().SetEffects(true, 0.2f, "knockback");
                 KnockBack(enemiesInRange[i].GetComponent<Rigidbody2D>());
             }
         }
@@ -33,7 +34,7 @@ public class BasicMeleeAttack : MonoBehaviour
     void KnockBack(Rigidbody2D enemy)
     {
         Vector3 direction = enemy.transform.position - transform.position;
-        enemy.AddForce(direction * knockBackEffectStrength);
+        enemy.AddForce(direction * knockBackEffectStrength, ForceMode2D.Impulse);
     }
 
     // Visual for the area of effect for the melee attack
