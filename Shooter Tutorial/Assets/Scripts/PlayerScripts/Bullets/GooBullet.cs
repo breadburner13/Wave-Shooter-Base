@@ -21,8 +21,10 @@ public class GooBullet : Bullet
     {
         if (collision.gameObject)
         {
+            Debug.Log("hit something");
             if (collision.gameObject.CompareTag("Enemy"))
             {
+                Debug.Log("enemy hit");
                 if (!collision.gameObject.GetComponent<Enemy1>().EffectsOn())
                 {
                     SlowEnemy(collision);
@@ -32,6 +34,7 @@ public class GooBullet : Bullet
 
             if (!collision.gameObject.CompareTag("Player"))
             {
+                Debug.Log("not an enemy hit");
                 Destroy(this.gameObject);
             }
         }

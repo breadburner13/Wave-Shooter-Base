@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.UI;
 
 public class Enemy1 : MonoBehaviour
 {
@@ -54,10 +55,27 @@ public class Enemy1 : MonoBehaviour
     private float CurrHealth;
     #endregion
 
+    #region UI_Vars
+    [SerializeField]
+    [Tooltip("How many points an enemy is worth")]
+    private int point_worth;
+    private Text score;
+    #endregion
+
 
     #region Unity_funcs
     private void Awake()
     {
+        Text[] all_strings;
+        all_strings = FindObjectsOfType<Text>();
+        foreach(Text t in all_strings)
+        {
+            if (t.CompareTag("Score"))
+            {
+                score = t;
+            }
+        }
+
         // We need to get our RigidBody and seeker Components
         enemyRB = GetComponent<Rigidbody2D>();
         //set our max helath
@@ -221,6 +239,8 @@ public class Enemy1 : MonoBehaviour
         if (CurrHealth <= 0)
         {
             Debug.Log("Added Points");
+            int current_score = int.Parse(score.text);
+            score.text = (current_score + point_worth).ToString();
             Destroy(this.gameObject);
         }
     }

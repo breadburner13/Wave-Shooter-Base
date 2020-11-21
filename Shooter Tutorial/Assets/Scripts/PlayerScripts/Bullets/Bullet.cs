@@ -21,7 +21,8 @@ public class Bullet : MonoBehaviour
     {
         if(Vector3.Distance(StartingPos, transform.position)> 10f)
         {
-            Debug.Log("Those long days passing by the door like late summer they slowly fade away");
+            Debug.Log(StartingPos);
+            Debug.Log(transform.position);
             Destroy(this.gameObject);
         }
     }
