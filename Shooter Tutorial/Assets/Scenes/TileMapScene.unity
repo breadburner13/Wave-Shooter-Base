@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 1324927626}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -242,6 +244,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -451,7 +454,7 @@ RectTransform:
   - {fileID: 82886565}
   - {fileID: 147234667}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -533,7 +536,7 @@ PrefabInstance:
     - target: {fileID: 5414948161102384398, guid: 976393b12d96e344a9dcb7616b6b887b,
         type: 3}
       propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAAIeysxv5OWAIAAP8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1zm0AM/SuePdcZoHbS9NY6jtNDPiZOJxcuCwiz42WX2Y/YTsb/vdIChrgTLizSk/SepOWDCWUbyJ02KyOKe10A+zlhdGbfJoPzDvZ8o9VavEOPeRWFqwjEA+aZO6HRHlOY1TU4I/JfaiMJHKHRK1FqUy+LDSy0dRbNJZcW0GW0o2iFpo8J2+Nrek0hBzwlV3R6x9N1NDniMQflwAzQHtjDWpRXueR1AwVRHsDx7GIW0XPZRcVJgCsU1SGji+9URUspbMeJuUMTNK+bCgyQ6EJwlBh4kOIKxKZyRHcc+1iWFlzHzfDDjTDYqTYp+63b9tXcbluCb1x6KpPMLwOpNun9f/5pHNyl0fVdXzeOqIarRL595oecWzfq79h885m4VzsutzyT8FqBetAro70q0OmMp1BvIbkZPk/SFhXk28HeUu2NfV3ffD0mEnEM8vcLKeosdH7WGtZSh34n8QX1EwxO5w9yDktiuyRoJSJ/LbzwzXibOsetMNahqxOqiGGmvSEoW4a2kSDvFtooMOMMDSgu3eEJ87jzMZ75vo665XRxuuqdr78PZyHBPOCj6Mz1pHengdlK7+7BVo/eSaFgGAE5HrBRC61Uu2VjSX3Y2puS56OwjRfF5/VicBklWTyPYZYlccSz6fV8Nv9RxlflvJzNyyxjYf+EQp1cPrVEu/bg4NSQXOGu9f+TycrwJmx8YfhuJd5rbQekUKVe5wZAPbYZTsTBYBG8msWyENigNTgnVBg4+0iZ1PkWivSUKA1Kl3tneDpkSVkj3rQjS8oW4QeSsiM7/gNQSwMEFAAACAgAAAAh7JfyVohtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKqmYFRkqGpYapJkpGhQWKSrqWpialFmqF5mmmaiWlaUpJSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAAh7KzG/k5YAgAA/wQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7JfyVohtAAAAeAAAAAkAJAAAAAAAAAAAAAAApQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABdAwAAAAA=
+      value: UEsDBBQAAAgIAACAn+usxv5OWAIAAP8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1zm0AM/SuePdcZoHbS9NY6jtNDPiZOJxcuCwiz42WX2Y/YTsb/vdIChrgTLizSk/SepOWDCWUbyJ02KyOKe10A+zlhdGbfJoPzDvZ8o9VavEOPeRWFqwjEA+aZO6HRHlOY1TU4I/JfaiMJHKHRK1FqUy+LDSy0dRbNJZcW0GW0o2iFpo8J2+Nrek0hBzwlV3R6x9N1NDniMQflwAzQHtjDWpRXueR1AwVRHsDx7GIW0XPZRcVJgCsU1SGji+9URUspbMeJuUMTNK+bCgyQ6EJwlBh4kOIKxKZyRHcc+1iWFlzHzfDDjTDYqTYp+63b9tXcbluCb1x6KpPMLwOpNun9f/5pHNyl0fVdXzeOqIarRL595oecWzfq79h885m4VzsutzyT8FqBetAro70q0OmMp1BvIbkZPk/SFhXk28HeUu2NfV3ffD0mEnEM8vcLKeosdH7WGtZSh34n8QX1EwxO5w9yDktiuyRoJSJ/LbzwzXibOsetMNahqxOqiGGmvSEoW4a2kSDvFtooMOMMDSgu3eEJ87jzMZ75vo665XRxuuqdr78PZyHBPOCj6Mz1pHengdlK7+7BVo/eSaFgGAE5HrBRC61Uu2VjSX3Y2puS56OwjRfF5/VicBklWTyPYZYlccSz6fV8Nv9RxlflvJzNyyxjYf+EQp1cPrVEu/bg4NSQXOGu9f+TycrwJmx8YfhuJd5rbQekUKVe5wZAPbYZTsTBYBG8msWyENigNTgnVBg4+0iZ1PkWivSUKA1Kl3tneDpkSVkj3rQjS8oW4QeSsiM7/gNQSwMEFAAACAgAAICf65fyVohtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKqmYFRkqGpYapJkpGhQWKSrqWpialFmqF5mmmaiWlaUpJSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAICf66zG/k5YAgAA/wQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAICf65fyVohtAAAAeAAAAAkAJAAAAAAAAAAAAAAApQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABdAwAAAAA=
       objectReference: {fileID: 0}
     - target: {fileID: 5414948161102384399, guid: 976393b12d96e344a9dcb7616b6b887b,
         type: 3}
@@ -710,6 +713,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.1830188, b: 0.1830188, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -784,6 +788,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -894,6 +899,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7869620867297500251, guid: b8304c7c6078b4a1ea8fd39667b1b7e8,
         type: 3}
+    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
+        type: 3}
+      propertyPath: dodge_speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
+        type: 3}
+      propertyPath: dodge_time
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7436101132885174646, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
         type: 3}
       propertyPath: m_Name
@@ -917,6 +932,7 @@ GameObject:
   - component: {fileID: 1273008419}
   - component: {fileID: 1273008418}
   - component: {fileID: 1273008417}
+  - component: {fileID: 1273008420}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -982,13 +998,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273008416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1273008420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273008416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49487c2c6d0905f4aab7be2cbf551f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1947604917}
 --- !u!1 &1281478661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1070,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1067,6 +1097,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281478661}
   m_CullTransparentMesh: 0
+--- !u!850595691 &1324927626
+LightingSettings:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Settings.lighting
+  serializedVersion: 2
+  m_GIWorkflowMode: 1
+  m_EnableBakedLightmaps: 0
+  m_EnableRealtimeLightmaps: 0
+  m_RealtimeEnvironmentLighting: 1
+  m_BounceScale: 1
+  m_AlbedoBoost: 1
+  m_IndirectOutputScale: 1
+  m_UsingShadowmask: 1
+  m_BakeBackend: 1
+  m_LightmapMaxSize: 1024
+  m_BakeResolution: 40
+  m_Padding: 2
+  m_TextureCompression: 1
+  m_AO: 0
+  m_AOMaxDistance: 1
+  m_CompAOExponent: 1
+  m_CompAOExponentDirect: 0
+  m_ExtractAO: 0
+  m_MixedBakeMode: 2
+  m_LightmapsBakeMode: 1
+  m_FilterMode: 1
+  m_LightmapParameters: {fileID: 0}
+  m_ExportTrainingData: 0
+  m_TrainingDataDestination: TrainingData
+  m_RealtimeResolution: 2
+  m_ForceWhiteAlbedo: 0
+  m_ForceUpdates: 0
+  m_FinalGather: 0
+  m_FinalGatherRayCount: 256
+  m_FinalGatherFiltering: 1
+  m_PVRCulling: 1
+  m_PVRSampling: 1
+  m_PVRDirectSampleCount: 32
+  m_PVRSampleCount: 512
+  m_PVREnvironmentSampleCount: 256
+  m_PVREnvironmentReferencePointCount: 2048
+  m_LightProbeSampleCountMultiplier: 4
+  m_PVRBounces: 2
+  m_PVRRussianRouletteStartBounce: 2
+  m_PVREnvironmentMIS: 1
+  m_PVRFilteringMode: 1
+  m_PVRDenoiserTypeDirect: 1
+  m_PVRDenoiserTypeIndirect: 1
+  m_PVRDenoiserTypeAO: 1
+  m_PVRFilterTypeDirect: 0
+  m_PVRFilterTypeIndirect: 0
+  m_PVRFilterTypeAO: 0
+  m_PVRFilteringGaussRadiusDirect: 1
+  m_PVRFilteringGaussRadiusIndirect: 5
+  m_PVRFilteringGaussRadiusAO: 2
+  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+  m_PVRFilteringAtrousPositionSigmaIndirect: 2
+  m_PVRFilteringAtrousPositionSigmaAO: 1
 --- !u!1 &1652158164
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,7 +3242,7 @@ PrefabInstance:
     - target: {fileID: 6558795894008105092, guid: a004af7b037632edbb636c5deb480eb4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6558795894008105092, guid: a004af7b037632edbb636c5deb480eb4,
         type: 3}
