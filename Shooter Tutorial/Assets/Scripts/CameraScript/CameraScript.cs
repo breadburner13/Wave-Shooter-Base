@@ -9,6 +9,7 @@ public class CameraScript : MonoBehaviour
     [SerializeField]
     [Tooltip("keeps track of player")]
     private GameObject Player;
+    public float zoom;
     #endregion
 
 
@@ -16,7 +17,7 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 moved = new Vector3(Player.transform.position.x, Player.transform.position.y, transform.position.z);
+        Vector3 moved = new Vector3(Player.transform.position.x, Player.transform.position.y, zoom);
         transform.position = moved;
     }
     #endregion
