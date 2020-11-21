@@ -9,10 +9,10 @@ public class Bullet : MonoBehaviour
     [Tooltip("Must be at least 1 to kill an enemy")]
     public int piercing;
     #endregion
-    private Vector3 StartingPos;
+    Vector3 StartingPos;
 
     #region Unity_funcs
-    private void Start()
+    private void Awake()
     {
         StartingPos = transform.position;
     }
