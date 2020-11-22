@@ -140,7 +140,7 @@ MonoBehaviour:
   move_speed: 5
   nextWaypointDistance: 3
   MaxHealth: 2
-  point_worth: 0
+  point_worth: 100
 --- !u!114 &7953915783607088888
 MonoBehaviour:
   m_ObjectHideFlags: 0

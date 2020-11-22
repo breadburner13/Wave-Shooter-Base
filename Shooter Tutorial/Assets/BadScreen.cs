@@ -9,7 +9,7 @@ public class BadScreen : MonoBehaviour
         if(checktouch.CompareTag("Player"))
         {
             Debug.Log("don't touch that mouse");
-            SceneManager.LoadScene("BadLands");
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }
