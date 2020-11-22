@@ -52,5 +52,5 @@ MonoBehaviour:
   Name: Mossberg
   ReloadTime: 0.2
   bullet_speed: 5
-  maxAmmo: 20
+  maxAmmo: 100
   currentAmmo: 0

@@ -163,7 +163,7 @@ public class Enemy1 : MonoBehaviour
             // If you want maximum performance you can check the squared distance instead to get rid of a
             // square root calculation. But that is outside the scope of this tutorial.
             distanceToWaypoint = Vector3.Distance(enemyRB.position, path.vectorPath[currWaypoint]);
-            Debug.Log("distanceToWayPoint: " + distanceToWaypoint);
+            //Debug.Log("distanceToWayPoint: " + distanceToWaypoint);
             if (distanceToWaypoint < nextWaypointDistance)
             {
                 // Check if there is another waypoint or if we have reached the end of the path
@@ -205,7 +205,7 @@ public class Enemy1 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        Debug.Log("collided");
+        //Debug.Log("collided");
         if (collision.transform.CompareTag("Player"))
         {
             if (att_timer <= 0)

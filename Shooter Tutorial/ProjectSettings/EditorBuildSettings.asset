@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: b1bdeef50e45d44afa4f8cd80575ddcd
+  - enabled: 1
+    path: Assets/Scenes/BadLands.unity
+    guid: 782afd4989ff868468d40c5116063dcf
   m_configObjects: {}

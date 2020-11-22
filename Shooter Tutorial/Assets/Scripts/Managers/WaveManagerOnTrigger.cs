@@ -45,8 +45,8 @@ public class WaveManagerOnTrigger : WaveManager
         if(checktouch.CompareTag("Player") && triggered == false)
         {
             triggered = true;
-            Debug.Log("neanderthal status");
-            checktouch.GetComponent<Player>().SetSpawn(transform.position);
+            Debug.Log("im such a mess, im lost, im no good at this im in love still in love still in love with you hard as a i try i cant even drink this pain away");
+            //checktouch.GetComponent<Player>().SetSpawn(transform.position);
         }
     }
 }
