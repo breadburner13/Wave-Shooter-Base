@@ -31,10 +31,15 @@ public class Bullet : MonoBehaviour
     #region Damag_funcs
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Collision: asdf " + collision.gameObject.tag);
         if (collision.transform.CompareTag("Enemy"))
         {
             collision.GetComponent<Enemy1>().TakeDamage(damage);
             
+        }
+        if (collision.transform.CompareTag("DestructableTile")){
+            
+            collision.GetComponent<DestructableTile>().destruct(this.gameObject.transform, GetComponent<Rigidbody2D>().velocity);
         }
         piercing--;
         if(piercing <= 0)

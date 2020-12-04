@@ -5,6 +5,15 @@ TextureImporter:
   - first:
       213: 2606754566009850827
     second: objects_tilemap_0
+  - first:
+      213: -3057795304914097528
+    second: objects_tilemap_0
+  - first:
+      213: -6964255386374903933
+    second: objects_tilemap_0
+  - first:
+      213: -1813778936114492095
+    second: objects_tilemap_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,6 +111,27 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: objects_tilemap_1
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 234
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88aecbefe578095d0800000000000000
+      internalID: -3057795304914097528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: objects_tilemap_0
       rect:
         serializedVersion: 2
@@ -110,14 +140,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcb05a3777d0d2420800000000000000
-      internalID: 2606754566009850827
+      spriteID: 14d4fcbdaa924d6e0800000000000000
+      internalID: -1813778936114492095
       vertices: []
       indices: 
       edges: []
