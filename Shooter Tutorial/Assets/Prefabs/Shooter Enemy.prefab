@@ -36,6 +36,21 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.3443396
       objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088885, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 33673497
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088885, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088885, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088886, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_Name
@@ -44,42 +59,42 @@ PrefabInstance:
     - target: {fileID: 7953915783607088886, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_TagString
-      value: ShooterEnemy
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088886, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8.47
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 504.17538
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de,
         type: 3}
@@ -105,6 +120,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088891, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953915783607088891, guid: d322b4602c8e9434ebf2a1ba514f02de,
+        type: 3}
+      propertyPath: move_speed
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d322b4602c8e9434ebf2a1ba514f02de, type: 3}

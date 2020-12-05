@@ -7,7 +7,7 @@ public class Shotgun : Weapons
     public override void Attack(Vector3 position, Vector2 looking)
     {
         Debug.Log("eat shit");
-        last_fired = Time.time + fire_rate;
+        //last_fired = Time.time + fire_rate;
         Bullet clone = Instantiate(BulletType, position, Quaternion.identity);
         clone.damage = damage;
         clone.GetComponent<Rigidbody2D>().velocity = looking.normalized * bullet_speed;

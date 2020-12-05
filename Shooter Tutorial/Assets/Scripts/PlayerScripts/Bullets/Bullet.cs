@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     [Tooltip("Must be at least 1 to kill an enemy")]
     public int piercing;
     #endregion
-    Vector3 StartingPos;
+    public Vector3 StartingPos;
 
     #region Unity_funcs
     private void Awake()
@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         StartingPos = transform.position;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if(Vector3.Distance(StartingPos, transform.position)> 10f)
         {
