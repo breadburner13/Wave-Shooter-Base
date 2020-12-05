@@ -1113,13 +1113,13 @@ MonoBehaviour:
     enemy: {fileID: 6760172530793527978, guid: f9dd82227aedf3543a4a27de471cb2e7, type: 3}
     amount: 40
     rate: 7
-  nextwave: 3
+  nextwave: 0
   isContinuous: 1
   spawnpoints:
   - {fileID: 649763051}
   - {fileID: 28590789}
-  timeBetweenWaves: 0
-  Wavecountdown: 0
+  timeBetweenWaves: 1
+  Wavecountdown: 1
   state: 2
   SearchCountDown: 1
 --- !u!4 &371700659
