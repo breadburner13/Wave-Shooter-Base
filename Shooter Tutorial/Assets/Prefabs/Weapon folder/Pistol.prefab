@@ -52,6 +52,6 @@ MonoBehaviour:
   - {fileID: 47075577347011365, guid: 1aedafd887562ff4ca3fd6a8948f7697, type: 3}
   Name: Pistol
   ReloadTime: 0
-  bullet_speed: 7
+  bullet_speed: 30
   maxAmmo: 20
   currentAmmo: 19

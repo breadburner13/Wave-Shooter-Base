@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Weapon vars
-    [SerializeField] Weapons CurrentWeapon;
+    public Weapons CurrentWeapon;
     #endregion
 
     #region Unity_funcs

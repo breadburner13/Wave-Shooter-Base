@@ -73,5 +73,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3108778926545153971, guid: b6e6adb9af72b3c44a1d7b1e310eb1db,
         type: 3}
+    - target: {fileID: 6674381379083277657, guid: 941037383e8c21e4294ae8ed7a5df9d5,
+        type: 3}
+      propertyPath: bullet_speed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674381379083277657, guid: 941037383e8c21e4294ae8ed7a5df9d5,
+        type: 3}
+      propertyPath: last_fired
+      value: 0.5949168
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674381379083277657, guid: 941037383e8c21e4294ae8ed7a5df9d5,
+        type: 3}
+      propertyPath: fire_rate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674381379083277657, guid: 941037383e8c21e4294ae8ed7a5df9d5,
+        type: 3}
+      propertyPath: currentAmmo
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 941037383e8c21e4294ae8ed7a5df9d5, type: 3}
