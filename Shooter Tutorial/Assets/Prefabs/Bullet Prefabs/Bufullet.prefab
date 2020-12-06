@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26e77c183a1e490ea84d64dc35bfc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 100
   piercing: 0
+  StartingPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &3490779190237588531
 PrefabInstance:
   m_ObjectHideFlags: 0
