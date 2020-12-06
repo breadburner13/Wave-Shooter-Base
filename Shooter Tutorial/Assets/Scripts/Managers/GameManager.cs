@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     public void score_update(int add)
     {
         total_scr += add;
-        Debug.Log(total_scr);
         score.text ="score: " + total_scr.ToString();
     }
 
