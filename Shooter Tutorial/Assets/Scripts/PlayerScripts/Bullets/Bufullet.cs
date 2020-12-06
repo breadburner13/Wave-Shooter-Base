@@ -13,7 +13,7 @@ public class Bufullet : Bullet
     void Start()
     {
         slowing_effect = 0.25f;
-        damage = 1;
+        //damage = 1;
         piercing = 0;
     }
 
@@ -23,9 +23,10 @@ public class Bufullet : Bullet
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
+                collision.GetComponent<Enemy1>().TakeDamage(damage);
                 if (!collision.gameObject.GetComponent<Enemy1>().EffectsOn())
                 {
-                    collision.GetComponent<Enemy1>().TakeDamage(damage);
+                    //collision.GetComponent<Enemy1>().TakeDamage(damage);
                     SlowEnemy(collision);
                     Destroy(this.gameObject);
                 }
