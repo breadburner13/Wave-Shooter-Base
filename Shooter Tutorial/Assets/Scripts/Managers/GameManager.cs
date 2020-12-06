@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
+
     }
 
     #endregion
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void score_reset()
     {
-
+        total_scr = 0;
     }
 
     private void find_score()
