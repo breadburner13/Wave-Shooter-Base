@@ -59,22 +59,15 @@ public class Enemy1 : MonoBehaviour
     [SerializeField]
     [Tooltip("How many points an enemy is worth")]
     private int point_worth;
-    private Text score;
+    private GameManager G;
     #endregion
 
 
     #region Unity_funcs
     private void Awake()
     {
-        Text[] all_strings;
-        all_strings = FindObjectsOfType<Text>();
-        foreach(Text t in all_strings)
-        {
-            if (t.CompareTag("Score"))
-            {
-                score = t;
-            }
-        }
+        G = FindObjectOfType<GameManager>();
+        
 
         // We need to get our RigidBody and seeker Components
         enemyRB = GetComponent<Rigidbody2D>();
@@ -239,8 +232,7 @@ public class Enemy1 : MonoBehaviour
         if (CurrHealth <= 0)
         {
             Debug.Log("Added Points");
-            int current_score = int.Parse(score.text);
-            score.text = (current_score + point_worth).ToString();
+            G.score_update(point_worth);
             Destroy(this.gameObject);
         }
     }

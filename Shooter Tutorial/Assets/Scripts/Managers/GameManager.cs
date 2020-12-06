@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    private int total_scr;
+    private Text score;
+
 
     #region Unity_functions
     private void Awake()
@@ -18,6 +22,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        find_score();
+        
 
     }
     #endregion
@@ -26,6 +32,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("LevelOne");
+        total_scr = 0;
     }
 
     public void MainMenu()
@@ -33,5 +40,36 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    #endregion
+
+    #region Score_func
+    public void score_update(int add)
+    {
+        total_scr += add;
+        Debug.Log(total_scr);
+        score.text ="score: " + total_scr.ToString();
+    }
+
+    private void score_reset()
+    {
+
+    }
+
+    private void find_score()
+    {
+        Text[] all_strings;
+        all_strings = FindObjectsOfType<Text>();
+        foreach (Text t in all_strings)
+        {
+            if (t != null && t.CompareTag("Score"))
+            {
+                score = t;
+                score.text = "score:" + total_scr.ToString();
+            }
+        }
+
+
+        
+    }
     #endregion
 }
