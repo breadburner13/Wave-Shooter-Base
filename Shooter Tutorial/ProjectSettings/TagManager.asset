@@ -9,6 +9,8 @@ TagManager:
   - ShooterEnemy
   - Bullet
   - Score
+  - DestructableTile
+  - Ammo
   layers:
   - Default
   - TransparentFX
