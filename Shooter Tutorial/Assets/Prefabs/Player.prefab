@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1899940383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899940384}
+  m_Layer: 0
+  m_Name: MeleeAttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1899940384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899940383}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.142, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7436101132885174641}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7436101132885174646
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +43,8 @@ GameObject:
   - component: {fileID: 7436101132885174643}
   - component: {fileID: 7436101132885174644}
   - component: {fileID: 7436101132885174645}
-  m_Layer: 0
+  - component: {fileID: 1803009919}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -29,8 +60,9 @@ Transform:
   m_GameObject: {fileID: 7436101132885174646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1899940384}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e6296b80c310a5646aa6ed5938f6781f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,12 +166,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952745137042d5b4893ebded06b6d8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_speed: 5
+  move_speed: 8
   last_visited: {x: 0, y: 0}
-  dodge_speed: 0
-  dodge_time: 0
+  dodge_speed: 30
+  dodge_time: 0.2
   max_health: 10
   HPSlider: {fileID: 0}
   score: {fileID: 0}
   CurrentWeapon: {fileID: 6674381379083277657, guid: 941037383e8c21e4294ae8ed7a5df9d5,
     type: 3}
+  weaponIndex: 0
+  allWeapons:
+  - {fileID: 6674381379083277657, guid: 941037383e8c21e4294ae8ed7a5df9d5, type: 3}
+--- !u!114 &1803009919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7436101132885174646}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38506d2460351434fa9292622477ff30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPosition: {fileID: 1899940384}
+  attackRange: 0.6
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  damage: 5
+  knockBackEffectStrength: 3500

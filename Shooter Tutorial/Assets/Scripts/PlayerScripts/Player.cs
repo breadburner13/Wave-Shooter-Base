@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     #region UI_vars
     [SerializeField]
-    [Tooltip("holds teh slider associated with health")]
+    [Tooltip("holds the slider associated with health")]
     private Slider HPSlider;
     [SerializeField]
     private Text score;
@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
 
     #region Weapon vars
     public Weapons CurrentWeapon;
+    public int weaponIndex;
+    public List<Weapons> allWeapons;
     #endregion
 
     #region Unity_funcs
@@ -58,6 +60,7 @@ public class Player : MonoBehaviour
         HPSlider.value = curr_health / max_health;
         score.text = "0";
         CurrentWeapon.Awake();
+        weaponIndex = 0;
     }
     private void Update()
     {
@@ -88,6 +91,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown("z") && !dodging)
         {
             StartCoroutine(dodge());
+        }
+        if (Input.GetKeyDown("t"))
+        {
+            changeWeapons();
         }
     }
     #endregion
@@ -124,8 +131,19 @@ public class Player : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("live clean");
+        //Debug.Log("live clean");
         CurrentWeapon.Attack(transform.position, looking);
+    }
+
+    void changeWeapons() 
+    {
+        Debug.Log("changing");
+        weaponIndex++;
+        if(weaponIndex >= allWeapons.Count) 
+        {
+            weaponIndex = 0;
+        }
+        CurrentWeapon = allWeapons[weaponIndex];
     }
 
     #endregion
@@ -134,7 +152,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         curr_health -= dmg;
-        Debug.Log("curr_health");
+        //Debug.Log("curr_health");
         if (curr_health <= 0)
         {
             Awake();
