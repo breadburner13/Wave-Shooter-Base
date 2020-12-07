@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        Debug.Log("benji's button");
         SceneManager.LoadScene("Main Menu");
     }
 
