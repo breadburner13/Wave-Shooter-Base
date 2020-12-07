@@ -42,6 +42,10 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Sewers()
+    {
+        SceneManager.LoadScene("Sewers of London");
+    }
     #endregion
 
     #region Score_func

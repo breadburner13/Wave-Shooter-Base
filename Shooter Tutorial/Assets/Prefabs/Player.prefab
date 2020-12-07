@@ -151,8 +151,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.13, y: 0.13}
+  m_Offset: {x: 0, y: -0.5}
+  m_Size: {x: 1.4, y: 2}
   m_Direction: 0
 --- !u!114 &7436101132885174645
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   dodge_time: 0.2
   max_health: 10
   HPSlider: {fileID: 0}
-  score: {fileID: 0}
+  Ammo: {fileID: 0}
   CurrentWeapon: {fileID: 6674381379083277657, guid: 941037383e8c21e4294ae8ed7a5df9d5,
     type: 3}
   weaponIndex: 0
