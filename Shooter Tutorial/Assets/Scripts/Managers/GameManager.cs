@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public void Sewers()
     {
-        SceneManager.LoadScene("Sewers of London");
+        SceneManager.LoadScene("sewersOfLondon");
     }
     #endregion
 
