@@ -1955,21 +1955,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7436101132885174641, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7436101132885174641, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7436101132885174642, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
         type: 3}
       propertyPath: HPSlider
@@ -1980,36 +1965,10 @@ PrefabInstance:
       propertyPath: score
       value: 
       objectReference: {fileID: 639556422}
-    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-        type: 3}
-      propertyPath: CurrentWeapon
-      value: 
-      objectReference: {fileID: 6048860419196513529, guid: be539b7f1dcde354185b11b3bdd4af4d,
-        type: 3}
-    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-        type: 3}
-      propertyPath: dodge_speed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-        type: 3}
-      propertyPath: dodge_time
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-        type: 3}
-      propertyPath: move_speed
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 7436101132885174646, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
         type: 3}
       propertyPath: m_Name
       value: Player (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7436101132885174646, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8, type: 3}
@@ -29528,31 +29487,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1563612115}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1803009919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803009918}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38506d2460351434fa9292622477ff30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPosition: {fileID: 1899940384}
-  attackRange: 0.6
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 2048
-  damage: 5
-  knockBackEffectStrength: 3500
---- !u!4 &1803009924 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7436101132885174641, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1563612115}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857085417
 GameObject:
   m_ObjectHideFlags: 0
@@ -29612,36 +29546,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 260171695}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1899940383
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1899940384}
-  m_Layer: 0
-  m_Name: MeleeAttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1899940384
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899940383}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.142, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1803009924}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1901969125
 GameObject:
