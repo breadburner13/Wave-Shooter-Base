@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     [Tooltip("holds the slider associated with health")]
     private Slider HPSlider;
     [SerializeField]
-    private Text score;
+    private Text Ammo;
     #endregion
 
     #region Weapon vars
@@ -58,9 +58,12 @@ public class Player : MonoBehaviour
         CurrentWeapon.last_fired = CurrentWeapon.fire_rate;
         transform.position = last_visited;
         HPSlider.value = curr_health / max_health;
-        score.text = "0";
         CurrentWeapon.Awake();
         weaponIndex = 0;
+
+         Ammo.text = "Ammo:" + CurrentWeapon.currentAmmo.ToString();
+         
+
     }
     private void Update()
     {
@@ -78,6 +81,7 @@ public class Player : MonoBehaviour
             {
                 Attack();
                 CurrentWeapon.currentAmmo -= 1;
+                Ammo.text = "Ammo:" + CurrentWeapon.currentAmmo.ToString();
                 CurrentWeapon.last_fired = 0f;
             }
         }
