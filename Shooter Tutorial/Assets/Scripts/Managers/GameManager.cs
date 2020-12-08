@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         find_score();
         
 
@@ -60,8 +60,9 @@ public class GameManager : MonoBehaviour
         total_scr = 0;
     }
 
-    private void find_score()
+    public void find_score()
     {
+        /*
         Text[] all_strings;
         all_strings = FindObjectsOfType<Text>();
         foreach (Text t in all_strings)
@@ -72,8 +73,10 @@ public class GameManager : MonoBehaviour
                 score.text = "score:" + total_scr.ToString();
             }
         }
-
-
+        */
+        score = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
+        score.text = "score:" + total_scr.ToString();
+        Debug.Log("I'm so angry at this situation");
         
     }
     #endregion
