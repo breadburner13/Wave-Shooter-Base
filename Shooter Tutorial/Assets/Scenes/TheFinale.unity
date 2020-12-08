@@ -1599,8 +1599,8 @@ MonoBehaviour:
   waves:
   - name: 2
     enemy: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de, type: 3}
-    amount: 50
-    rate: 4
+    amount: 1000
+    rate: 100
   nextwave: 0
   isContinuous: 1
   spawnpoints:
@@ -1964,8 +1964,8 @@ MonoBehaviour:
   waves:
   - name: 2
     enemy: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de, type: 3}
-    amount: 100
-    rate: 4
+    amount: 1000
+    rate: 100
   nextwave: 0
   isContinuous: 1
   spawnpoints:
@@ -51088,7 +51088,7 @@ PrefabInstance:
         type: 3}
       propertyPath: CurrentWeapon
       value: 
-      objectReference: {fileID: 351897321491618871, guid: 4c925c6a7a7e97346b58c411009b1eb4,
+      objectReference: {fileID: 4495354445168761239, guid: 93a6b4d6da1c14d559356fc09460e4f8,
         type: 3}
     - target: {fileID: 7436101132885174645, guid: 0d2599c5ce7c7dd40a0381a114ddd5a8,
         type: 3}
@@ -51206,8 +51206,8 @@ MonoBehaviour:
   waves:
   - name: 2
     enemy: {fileID: 7953915783607088890, guid: d322b4602c8e9434ebf2a1ba514f02de, type: 3}
-    amount: 100
-    rate: 4
+    amount: 1000
+    rate: 100
   nextwave: 0
   isContinuous: 1
   spawnpoints:
@@ -51285,14 +51285,14 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831307665}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f625f9f2f0fcd4b0eaf0cba7ea6548ab, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 588c123b883f34516a18e89641e05841, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -51424,7 +51424,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 10
-  m_Depth: -1
+  m_Depth: -10
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
