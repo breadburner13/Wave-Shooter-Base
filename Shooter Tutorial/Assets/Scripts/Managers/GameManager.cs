@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     #region Scene_transisitons
     public void StartGame()
     {
-        SceneManager.LoadScene("LevelOne");
+        SceneManager.LoadScene("ss1");
         total_scr = 0;
     }
 

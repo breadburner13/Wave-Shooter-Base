@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ss4.unity
     guid: 2eb6991626f2e4bcca337457d80cd550
+  - enabled: 1
+    path: Assets/Scenes/ss5.unity
+    guid: 8a7dd27d068c84aa2a87390e1faff683
+  - enabled: 1
+    path: Assets/Scenes/TheFinale.unity
+    guid: 83e1d537f19624340afff5db750b5304
   m_configObjects: {}

@@ -181,7 +181,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8b57ca6746780634c96b8128acc37127, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.07075471, b: 0.96562576, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936971525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -240,8 +240,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0edfe58bcf50d41fdbd359bb6489769d, type: 3}
   - {fileID: 21300000, guid: f1aff709b2482459db187851167bb7ee, type: 3}
   - {fileID: 21300000, guid: b24bf254620dc41a6b55b67375cc7f7d, type: 3}
-  - {fileID: 21300000, guid: 8f6fd278c89564dbba21f487e00ae396, type: 3}
-  - {fileID: 21300000, guid: 69a1381e5a5754efd9606fd50c953474, type: 3}
+  - {fileID: 21300000, guid: e893f4a9ce5704c728cb3f2616ed26fd, type: 3}
+  - {fileID: 21300000, guid: 98f08d14630204510894bc605dc67ac2, type: 3}
+  - {fileID: 21300000, guid: 0960b1e8ac1ba491c981d8b08e64500d, type: 3}
+  - {fileID: 21300000, guid: 8a1c59c6a9aff40e58b0a5b1739459e9, type: 3}
   index: 0
   nextScene: sewersOfLondon
 --- !u!212 &1800409989
